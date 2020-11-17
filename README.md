@@ -1,14 +1,18 @@
-#Job search engine:
-##UltimateJob.com
+UltimateJob.com - Job Search Engine
 
-####The goal is:
-allow people the ability to search for jobs over the internet directly from the hiring companies
+Our goal is:
 
-####Description:
-a website that people will be able to sign in, set search criteria,
-and the system will find the matches from all the participating company sites.
+Allow users to find the ultimate job for them, tailored to their capabilities - in one platform
 
-####How it works:
-1. The main page website that users will be able to sign in, and fill in their preferences.
+Functionalities:
+
+- Sign in & sign up
+- Algorithm for serach engine by criterias
+- Search history + saved jobs list
+
+How it works:
+
+1. Main page website with sign in/ sign up
+2. Profile creation with job preferences.
 2. Database that contains all the users and their preferences + search history.
 3. A backend that searches participating companies career websites for search matches.
