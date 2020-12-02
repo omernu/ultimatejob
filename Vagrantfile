@@ -70,6 +70,6 @@ Vagrant.configure("2") do |config|
   # SHELL
 
   # Defining the bootstrap file
-  config.vm.provision "shell", path: "bootstrap.sh", privileged: false
+  config.vm.provision "shell", path: "setup.sh", privileged: false
 
 end
