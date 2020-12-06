@@ -1,7 +1,6 @@
 import sqlite3
 from sqlite3 import Error
-import reqeusts
-from bs import beautifulsuop4
+
 
 
 def create_connection(db_file):
@@ -43,8 +42,8 @@ def main():
 
     # create a database connection
     conn = create_connection(database)
+    User = none
     with conn:
- 
         select_preferences_by_UserID(conn, User)
       
 
