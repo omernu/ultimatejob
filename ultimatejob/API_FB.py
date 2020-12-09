@@ -1,11 +1,11 @@
-### Import and load necessary lib
+# Import and load necessary lib
 
 import requests
 import bs4
 from bs4 import BeautifulSoup as bs
 import re
 
-### Load our first page
+# Load our first page
 
 search_url = "https://www.facebook.com/careers/jobs/?q="
 fb_url = "https://www.facebook.com"
@@ -13,7 +13,7 @@ fb_url = "https://www.facebook.com"
 prefrences = "DevOps" # Need to pull from db
 r = requests.get(search_url+prefrences)
 
-### Checking if content is available
+# Checking if content is available
 #print(r.status_code)
 
 soup = bs(r.content)
