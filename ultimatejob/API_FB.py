@@ -1,13 +1,12 @@
 # Import and load necessary lib
 import requests
-import bs4
 from bs4 import BeautifulSoup as bs
 # Load our first page
 search_url = "https://www.facebook.com/careers/jobs/?q="
 fb_url = "https://www.facebook.com"
 
 # Need to pull from db
-prefrences = "DevOps" 
+prefrences = "DevOps"
 r = requests.get(search_url+prefrences)
 
 # Checking if content is available
@@ -18,23 +17,26 @@ soup = bs(r.content)
 
 # Manipulation
 
+
 def extract_jobs_list(soup):
     jobs_links = []
     jobs_list = soup.find("div", {"class": "_8tk7"})
     jobs = jobs_list.find_all("a", {"class": "_8sef"})
     links = [link['href'] for link in jobs]
     jobs_links = links
-    for l in jobs_links:
-        print(fb_url+l)
+    for link in jobs_links:
+        print(fb_url+link)
 
+        
 def extract_jobs_title(soup):
     jobs_titles = []
     jobs_list = soup.find("div", {"class": "_8tk7"})
     jobs = jobs_list.find_all("div", {"class": "_8sel"})
     jobs_titles = jobs
-    for l in jobs_titles:
-        print(l.get_text())
+    for title in jobs_titles:
+        print(title.get_text())
 
+        
 extract_jobs_list(soup)
 
 
