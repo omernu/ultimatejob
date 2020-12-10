@@ -27,7 +27,7 @@ def extract_jobs_list(soup):
     for link in jobs_links:
         print(fb_url+link)
 
-        
+
 def extract_jobs_title(soup):
     jobs_titles = []
     jobs_list = soup.find("div", {"class": "_8tk7"})
@@ -36,7 +36,7 @@ def extract_jobs_title(soup):
     for title in jobs_titles:
         print(title.get_text())
 
-        
+
 extract_jobs_list(soup)
 
 
