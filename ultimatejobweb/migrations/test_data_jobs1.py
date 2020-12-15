@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class Migration(migrations.Migration):
 
     dependencies = [
-     ('ultimatejobweb', '0002_auto_20201212_1919'),
+     #('ultimatejobweb', '0002_auto_20201212_1919'),
     ]
 
     def generate_data(apps, schema_editor):
