@@ -5,7 +5,18 @@ import API_FB
 import pytest
 
 
-# Test function
+def main():
+    # Create soup object & print a status message - 404 not good , 200 good
+    soup = API_FB.create_soup(API_FB.create_req())
+
+    # Return list contains URLs
+    API_FB.extract_jobs_url(soup)
+
+    # Return list contains job titles
+    API_FB.extract_jobs_title(soup)
+
+
+# Test functions
 def test_api_urls():
     """The testing will check if our functions return the required output"""
     expected_output_urls = ['https://www.facebook.com/careers/jobs/1672813472870915/',
