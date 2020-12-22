@@ -7,10 +7,14 @@ verify_ssl = true
 flake8 = "*"
 pytest = "*"
 pytest-django = "*"
+django-pytest = "*"
+
 
 [packages]
 django = "*"
 flake8 = "*"
+beautifulsoup4 = "*"
+requests = "*"
 
 [requires]
 python_version = "3.8"
