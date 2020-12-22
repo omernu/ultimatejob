@@ -14,8 +14,10 @@ def extract_jobs_url(soup):
     for link in jobs_links:
         list_jobs_links.append(fb_url+link)
         # Need to push to a db
+    print("-------URLs--------")
     print(list_jobs_links)
     return list_jobs_links
+
 
 def extract_jobs_title(soup):
     jobs_titles = []
@@ -26,14 +28,17 @@ def extract_jobs_title(soup):
     for title in jobs_titles:
         list_jobs_titles.append(title.get_text())
         # Need to push to a db
+    print("-------Titles--------")
     print(list_jobs_titles)
     return list_jobs_titles
+
 
 def create_soup(req):
     print(req.status_code)
     soup = BeautifulSoup(req.content, 'html.parser')
     # print(soup.prettify())
     return soup
+
 
 def create_req():
     # Load our first page
