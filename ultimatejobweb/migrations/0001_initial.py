@@ -23,7 +23,7 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
-            name='user',
+            name='profile',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('profession', models.CharField(max_length=128)),

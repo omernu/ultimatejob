@@ -9,14 +9,13 @@ def test_api_urls():
     """The testing will check if our functions return the required output"""
     # Create soup object & print a status message - 404 not good , 200 good
     soup = API_FB.create_soup(API_FB.create_req())
-    testval = 'testval'
-    expected_output_urls =  ['https://www.facebook.com/careers/v2/jobs/1672813472870915/',
-                             'https://www.facebook.com/careers/v2/jobs/712878282607325/',
-                             'https://www.facebook.com/careers/v2/jobs/420212419368641/',
-                             'https://www.facebook.com/careers/v2/jobs/207984144060781/',
-                             'https://www.facebook.com/careers/v2/jobs/773785633436218/',
-                             'https://www.facebook.com/careers/v2/jobs/2597607417128369/',
-                             'https://www.facebook.com/careers/v2/jobs/536078547072736/']
+    expected_output_urls = ['https://www.facebook.com/careers/v2/jobs/1672813472870915/',
+                            'https://www.facebook.com/careers/v2/jobs/712878282607325/',
+                            'https://www.facebook.com/careers/v2/jobs/420212419368641/',
+                            'https://www.facebook.com/careers/v2/jobs/207984144060781/',
+                            'https://www.facebook.com/careers/v2/jobs/773785633436218/',
+                            'https://www.facebook.com/careers/v2/jobs/2597607417128369/',
+                            'https://www.facebook.com/careers/v2/jobs/536078547072736/']
     assert API_FB.extract_jobs_url(soup) == expected_output_urls, "The tests for URLs were successful"
 
 
