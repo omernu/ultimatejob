@@ -1,0 +1,17 @@
+table {
+	display: table;
+}
+table tr {
+	display: table-cell;
+}
+table tr td {
+	display: block;
+}
+
+.showSearch{
+    height: 550;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
