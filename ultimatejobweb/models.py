@@ -1,20 +1,19 @@
 from django.db import models
 
 
-class company(models.Model):
-    CompanyName = models.CharField(max_length=128)
-    CompanySearchUrl = models.URLField()
-    CompanyLogo = models.TextField()
-    FunctionName = models.TextField()
+class Company(models.Model):
+    company_name = models.CharField(max_length=128)
+    company_search_url = models.URLField()
+    company_logo = models.TextField()
+    function_name = models.TextField()
 
 
-class job(models.Model):
-    CompanyName = models.ForeignKey(company, on_delete=models.CASCADE)
-    SearchKey = models.CharField(max_length=128)
-    JobTitle = models.CharField(max_length=128)
-    DescriptionURL = models.URLField()
-
-    def __iter__(self):
-        return iter(self.JobTitle)
+class Job(models.Model):
+    company = models.ForeignKey(Company, on_delete=models.CASCADE)
+    job_title = models.CharField(max_length=128)
+    description_url = models.URLField()
+    
+    def _str_(self):
+        return self.job_title
 
 # Create your models here.

@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import redirect
 from .forms import SignUpFroms
-from .models import job
+from .models import Job
 
 
 def homepage(request):
@@ -34,4 +34,4 @@ def sign_in(request):
 
 
 def available_jobs(request):
-    return render(request, r"available_jobs.html", {'job': job})
+    return render(request, r"available_jobs.html", {'Job': Job.objects.all()})
