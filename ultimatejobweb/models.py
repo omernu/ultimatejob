@@ -10,7 +10,6 @@ class company(models.Model):
 
 class job(models.Model):
     company = models.ForeignKey(company, on_delete=models.CASCADE)
-    search_key = models.CharField(max_length=128)
     job_title = models.CharField(max_length=128)
     description_url = models.URLField()
 
