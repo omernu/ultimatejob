@@ -1,29 +1,39 @@
 from django.db import migrations, transaction
-from django.contrib.auth.models import User
+from ultimatejobweb.models import job, company
 
 
 class Migration(migrations.Migration):
 
     dependencies = [
-     #('ultimatejobweb', '0002_auto_20201212_1919'),
+        ('ultimatejobweb', '0001_initial'),
     ]
 
     def generate_data(apps, schema_editor):
-        def populate_data(Jobs, parent=None):
-            for user in Jobs:
-                user1 = User.objects.create_user(username='omer', password='sisma1', email='omer@nomer.com')
-                user2 = User.objects.create_user(username='rom', password='sisma1', email='rom@nomer.com')
-        from ultimatejobweb.models import Jobs
-        Jobs = [
-          ('user1', 'Facebook', 'Production Engineer',
+        company1 = company(1, '"https://careers-redhat.icims.com/jobs/search?ss=1&in_iframe=1&searchKeyword=',
+                           'logo1', 'function1')
+        company2 = company(2, 'https://www.amazon.jobs/en/', 'logo2', 'function2')
+
+        jobs = [
+          (company1, 'DevOps', 'Production Engineer',
            'https://www.facebook.com/careers/jobs/1672813472870915/'),
-          ('user2', 'Facebook', 'Production Engineer',
+          (company2, 'DevOps', 'Production Engineer',
            'https://www.facebook.com/careers/jobs/712878282607325/'),
         ]
 
+        companies = [
+          ('Facebook', '"https://careers-redhat.icims.com/jobs/search?ss=1&in_iframe=1&searchKeyword=',
+           'logo1', 'function1'),
+          ('Amazon', 'https://www.amazon.jobs/en/', 'logo2', 'function2'),
+        ]
+
         with transaction.atomic():
-            for user, CompanyName, JobTitle, ApplyURL in Jobs:
-                Jobs(id=id, user=user, CompanyName=CompanyName, JobTitle=JobTitle, ApplyURL=ApplyURL).save()
+            for CompanyName, CompanySearchUrl, CompanyLogo, FunctionName in companies:
+                company(CompanyName=CompanyName, CompanySearchUrl=CompanySearchUrl, CompanyLogo=CompanyLogo,
+                        FunctionName=FunctionName).save()
+
+            for CompanyName, SearchKey, JobTitle, DescriptionURL in jobs:
+                job(CompanyName=CompanyName, SearchKey=SearchKey, JobTitle=JobTitle,
+                    DescriptionURL=DescriptionURL).save()
 
     operations = [
         migrations.RunPython(generate_data),
