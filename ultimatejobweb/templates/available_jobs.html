@@ -10,11 +10,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <!-- jquery cdn-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-       <!-- icons-->
+    <!-- icons-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
-        <!-- boostrap js-->
+    <!-- boostrap js-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 
 </head>
 <body>
@@ -76,39 +76,16 @@
             </tr>
         </thead>
         <tbody>
-		   <h1> Available jobs  </h1>
-		   <div>
-				{% for item in job_posts %}
+		<h1> Available jobs  </h1>
+		<div>
+				{% for item in Job %}
 				<tr> 
 					<td>{{ item.company }}</td>
 					<td>{{ item.job_title }}</td>
 					<td>{{ item.description_url }}</td>
-
 				</tr>
 					{% endfor %}
-			</div>
-            <!--<tr>
-                <td>Red hat</td>
-                <td>DEVOPS</td>
-                <td>28.11.20</td>
-                <td>Ra'anna,IL</td>
-                <td><a href="#">click here</a></td>
-            </tr>
-            <tr>
-                <td>Intel</td>
-                <td>Developer</td>
-                <td>25.11.20</td>
-                <td>Petah Tikva, IL</td>
-                <td><a href="#">click here</a></td>
-            </tr>
-            <tr>
-                <td>Microsoft</td>
-                <td>CMO</td>
-                <td>20.11.20</td>
-                <td>Kfar Saba, IL</td>
-                <td><a href="#">click here</a></td>
-
-            </tr>-->
+		</div>
         </tbody>
     </table>
 </div>
