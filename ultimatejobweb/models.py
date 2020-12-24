@@ -1,17 +1,16 @@
 from django.db import models
-from django.contrib.auth.models import User
-
-
-class profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    profession = models.CharField(max_length=128)
 
 
 class company(models.Model):
-    UrlCompany = models.URLField(max_length=200)
-    CompanyName = models.CharField(max_length=128)
+    company_name = models.CharField(max_length=128)
+    company_search_url = models.URLField()
+    company_logo = models.TextField()
+    function_name = models.TextField()
 
-    def __str__(self):
-        return self.CompanyName
+
+class job(models.Model):
+    company = models.ForeignKey(company, on_delete=models.CASCADE)
+    job_title = models.CharField(max_length=128)
+    description_url = models.URLField()
 
 # Create your models here.
