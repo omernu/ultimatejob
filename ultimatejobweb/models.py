@@ -12,8 +12,5 @@ class Job(models.Model):
     company = models.ForeignKey(Company, on_delete=models.CASCADE)
     job_title = models.CharField(max_length=128)
     description_url = models.URLField()
-    
-    def _str_(self):
-        return self.job_title
 
 # Create your models here.
