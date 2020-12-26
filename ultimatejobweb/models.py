@@ -13,6 +13,4 @@ class Job(models.Model):
     job_title = models.CharField(max_length=128)
     description_url = models.URLField()
     
-
-
 # Create your models here.

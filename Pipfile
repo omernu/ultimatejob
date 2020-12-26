@@ -11,6 +11,8 @@ pytest-django = "*"
 [packages]
 django = "*"
 flake8 = "*"
+beautifulsoup4 = "*"
+requests = "*"
 
 [requires]
 python_version = "3.8"
