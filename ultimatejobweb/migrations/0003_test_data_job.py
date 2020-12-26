@@ -8,11 +8,8 @@ class Migration(migrations.Migration):
         ('ultimatejobweb', '0002_test_data_company'),
     ]
 
-    def generate_data(apps, schema_editor):
-        company1 = company(id = 1)
-        
-        jobs = [
-          (company1, 'Production Engineer','https://www.facebook.com/careers/jobs/1672813472870915/'),]
+    def generate_data(apps, schema_editor):      
+        jobs = [(company.object(1), 'Production Engineer','https://www.facebook.com/careers/jobs/1672813472870915/'),]
         
         with transaction.atomic():
             for company, job_title, description_url in jobs:

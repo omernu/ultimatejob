@@ -9,7 +9,9 @@ class Migration(migrations.Migration):
     def generate_data (apps, schema_editor):
 
         companies = [('Facebook', 'https://www.facebook.com/careers/jobs?q=',
-                    'templates/company logo/FBlogo.png', 'manipuletion_facebook'),]
+                    'templates/company logo/FBlogo.png', 'manipuletion_facebook'),
+                     ('Amazon', 'https://www.amazon.jobs/en/search?base_query=&loc_query=',
+                    'templates/company logo/AMAZONlogo.png', 'manipuletion_amazon')]
 
 
         with transaction.atomic():
