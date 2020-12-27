@@ -69,15 +69,13 @@
             <tr>
                 <th>Company name</th>
                 <th>Position offered</th>
-                <th>Link to job application</th>
             </tr>
         </thead>
         <tbody>
 			{% for item in job %}
 			<tr> 
 				<td>{{ item.company.company_name }}</td>
-				<td>{{ item.job_title }}</td>
-				<td>{{ item.description_url }}</td>
+				<td><a href="{{ item.description_url }}">{{ item.job_title }}</a></td>
 			</tr>
 				{% endfor %}
         </tbody>
