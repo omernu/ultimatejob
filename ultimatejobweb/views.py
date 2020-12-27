@@ -34,5 +34,4 @@ def sign_in(request):
 
 
 def available_jobs(request):
-    return render(request, r"available_jobs.html", {'job': Job.objects.all()}) 
-
+    return render(request, r"available_jobs.html", {'job': Job.objects.all()})
