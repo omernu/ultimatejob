@@ -9,11 +9,15 @@ class Migration(migrations.Migration):
     ]
 
     def generate_data(apps, schema_editor):      
-        jobs = [(company.object(1), 'Production Engineer','https://www.facebook.com/careers/jobs/1672813472870915/'),]
+        jobs = [('Production Engineer','https://www.facebook.com/careers/jobs/1672813472870915/'),
+                ('Product M','https://www.facebook.com/careers/jobs/16732472870915/')]
         
         with transaction.atomic():
-            for company, job_title, description_url in jobs:
-                job(company=company, job_title=job_title, description_url=description_url).save()
+            n=0
+            for job_title, description_url in jobs:
+                n += 1
+                company_n = company.objects.get(id=n)
+                job(company=company_n, job_title=job_title, description_url=description_url).save()
 
     operations = [
         migrations.RunPython(generate_data),
