@@ -8,10 +8,10 @@ class Migration(migrations.Migration):
 
     def generate_data(apps, schema_editor):
 
-        companies = [('Facebook', 'https://www.facebook.com/careers/jobs?q=',
-                      'templates/company logo/FBlogo.png', 'manipuletion_facebook'),
-                     ('Amazon', 'https://www.amazon.jobs/en/search?base_query=&loc_query=',
-                      'templates/company logo/AMAZONlogo.png', 'manipuletion_amazon')]
+        companies = [('Facebook', 'https://www.facebook.com/careers/jobs/?q=',
+                      'templates/company logo/FBlogo.png', 'API_FB.py'),
+                     ('Red Hat', 'https://careers-redhat.icims.com/jobs/search?ss=1&in_iframe=1&searchLocation=13269--Raanana',
+                      'templates/company logo/RHlogo.png', 'API_RH')]
 
         with transaction.atomic():
             for company_name, company_search_url, company_logo, function_name in companies:
