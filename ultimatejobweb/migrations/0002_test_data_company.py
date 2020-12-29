@@ -10,7 +10,8 @@ class Migration(migrations.Migration):
 
         companies = [('Facebook', 'https://www.facebook.com/careers/jobs/?q=',
                       'templates/company logo/FBlogo.png', 'API_FB.py'),
-                     ('Red Hat', 'https://careers-redhat.icims.com/jobs/search?ss=1&in_iframe=1&searchLocation=13269--Raanana',
+                     ('Red Hat', 'https://careers-redhat.icims.com/jobs/search?ss=1&in+\
+                       _iframe=1&searchLocation=13269--Raanana',
                       'templates/company logo/RHlogo.png', 'API_RH')]
 
         with transaction.atomic():
