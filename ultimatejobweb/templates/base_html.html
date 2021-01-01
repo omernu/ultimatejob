@@ -41,6 +41,11 @@
             <li class="page-item">
                 <a href=" /available_jobs" class="page-link">available jobs for you</a>
             </li>
+			<li>
+				<form class= "logout-link" method="post" action=" /logout/">
+					{% csrf_token %}
+					<button type="submit">Logout</button>
+				</form>
         </ul>
 	
 	
