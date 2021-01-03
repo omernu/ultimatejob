@@ -54,8 +54,8 @@ class Migration(migrations.Migration):
                 senior-technical-writer/job?hub=7&in_iframe=1'), ]
 
         with transaction.atomic():
-            for company_naim_data, job_title, description_url in jobs:
-                company_job = company.objects.get(company_name=company_naim_data)
+            for company_name_data, job_title, description_url in jobs:
+                company_job = company.objects.get(company_name=company_name_data)
                 job(company=company_job, job_title=job_title, description_url=description_url).save()
 
     operations = [
