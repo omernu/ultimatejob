@@ -6,9 +6,8 @@ verify_ssl = true
 [dev-packages]
 flake8 = "*"
 pytest = "*"
-pytest-django = "*"
 django-pytest = "*"
-
+pytest-django = "*"
 
 [packages]
 django = "*"
