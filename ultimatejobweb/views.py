@@ -3,6 +3,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from .forms import SignUpFroms
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
+from ultimatejobweb.models import Job
 
 
 def homepage(request):
@@ -36,7 +37,7 @@ def personal_area(request):
 
 @login_required(login_url="/sign_in")
 def available_jobs(request):
-    return render(request, r"available_jobs.html")
+    return render(request, r"available_jobs.html", {'job': Job.objects.all()})
 
 
 def logout_view(request):
