@@ -1,49 +1,6 @@
-<!DOCTYPE html>
+{% extends 'base_html.html' %}
 
-
-<html>
-<head>
-    <title>Search Results</title>
-    <!-- boostrap css framework-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <!-- jquery cdn-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-    <!-- icons-->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
-    <!-- boostrap js-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
-
-</head>
-<body>
-<!--jumbotron-->
-<div class="container">
-<div class="jumbotron">
-    <h1 class="display-3">UltimateJob</h1>
-    <p class="lead">This is the place where you will find your perfect career.</p>
-    <hr class="my-4">
-</div>
-</div>
-
-<!--pagination-->
-<div class="container">
-    <nav aria-label="Page navigation example">
-        <ul class="pagination">
-            <li class="page-item">
-                <a href=" / " class="page-link">Home page</a>
-            </li>
-            <li class="page-item">
-                <a href="/signup" class="page-link">Sign up</a>
-            </li>
-            <li class="page-item">
-                <a href="/sign_in" class="page-link">Sign in</a>
-            </li>
-            <li class="page-item">
-                <a href="/personal_area" class="page-link">personal area</a>
-            </li>
-            <li class="page-item">
-                <a href="/available_jobs" class="page-link">available jobs for you</a>
-            </li>
-        </ul>
+{% block content %}
         
 <!--progress bar-->
 <div class="progress">
@@ -53,7 +10,7 @@
 </nav>
 </div>
            <!-- alert-->
-        <div class="container">
+           <div class="container">
             <div class="alert alert-primary">
                 <strong>Strep 3: choose your next job!</strong>
                 <p>Everything is ready now, all you have to do is go into the company's sites and apply for your job </p>
@@ -63,38 +20,29 @@
         </div>
 
    <!--tables-->
-	<div class="container">
+   <div class="container">
     <table class="table table-hover table-stripped">
         <thead class="thead-dark">
             <tr>
                 <th>Company name</th>
                 <th>Position offered</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
+            <tr>
 			{% for item in job %}
 			<tr> 
 				<td>{{ item.company.company_name }}</td>
 				<td><a href="{{ item.description_url }}">{{ item.job_title }}</a></td>
 			</tr>
 				{% endfor %}
+            </tr>
         </tbody>
     </table>
 </div>
 
-<!--cards-->
+</div>
+</div>
 
-	<div class="card bg-primary text-white mb-3 text-center">
-		<div class="card-body">
-        <blockquote class="card-blockqute">
-              <footer><cite title="title">All rights reserved, UltimateJob inc. 2020</cite></footer>
-            </blockquote>
-		</div>
-	</div>
-
-
-
-
-
-</body>
-</html>
+{% endblock %}

@@ -9,7 +9,7 @@ class Company(models.Model):
 
 
 class Job(models.Model):
-    company = models.ForeignKey(company, on_delete=models.CASCADE)
+    company = models.ForeignKey(Company, on_delete=models.CASCADE)
     job_title = models.CharField(max_length=128)
     description_url = models.URLField()
 
