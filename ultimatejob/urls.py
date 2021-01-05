@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from ultimatejobweb import views
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,3 +27,5 @@ urlpatterns = [
     path('available_jobs/', views.available_jobs, name="available_jobs"),
     path('logout/', views.logout_view, name="logout")
 ]
+
+urlpatterns += staticfiles_urlpatterns()
