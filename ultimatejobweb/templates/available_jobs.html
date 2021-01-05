@@ -26,33 +26,17 @@
             <tr>
                 <th>Company name</th>
                 <th>Position offered</th>
-                <th>Upload date</th>
-                <th>Location</th>
-                <th>Link to job application</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>Red hat</td>
-                <td>DEVOPS</td>
-                <td>28.11.20</td>
-                <td>Ra'anna,IL</td>
-                <td><a href="#">click here</a></td>
-            </tr>
-            <tr>
-                <td>Intel</td>
-                <td>Developer</td>
-                <td>25.11.20</td>
-                <td>Petah Tikva, IL</td>
-                <td><a href="#">click here</a></td>
-            </tr>
-            <tr>
-                <td>Microsoft</td>
-                <td>CMO</td>
-                <td>20.11.20</td>
-                <td>Kfar Saba, IL</td>
-                <td><a href="#">click here</a></td>
-
+			{% for item in job %}
+			<tr> 
+				<td>{{ item.company.company_name }}</td>
+				<td><a href="{{ item.description_url }}">{{ item.job_title }}</a></td>
+			</tr>
+				{% endfor %}
             </tr>
         </tbody>
     </table>

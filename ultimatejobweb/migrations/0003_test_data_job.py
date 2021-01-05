@@ -1,5 +1,5 @@
 from django.db import migrations, transaction
-from ultimatejobweb.models import job, company
+from ultimatejobweb.models import Job, Company
 
 
 class Migration(migrations.Migration):
@@ -55,8 +55,8 @@ class Migration(migrations.Migration):
 
         with transaction.atomic():
             for company_name_data, job_title, description_url in jobs:
-                company_job = company.objects.get(company_name=company_name_data)
-                job(company=company_job, job_title=job_title, description_url=description_url).save()
+                company_job = Company.objects.get(company_name=company_name_data)
+                Job(company=company_job, job_title=job_title, description_url=description_url).save()
 
     operations = [
         migrations.RunPython(generate_data),

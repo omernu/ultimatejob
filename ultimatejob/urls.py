@@ -26,7 +26,6 @@ urlpatterns = [
     path('sign_in/', views.sign_in_view, name="sign_in"),
     path('available_jobs/', views.available_jobs, name="available_jobs"),
     path('logout/', views.logout_view, name="logout")
-
 ]
 
 urlpatterns += staticfiles_urlpatterns()
