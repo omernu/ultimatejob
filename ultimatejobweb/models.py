@@ -7,6 +7,9 @@ class Company(models.Model):
     company_logo = models.TextField()
     function_name = models.TextField()
 
+    def get(self):
+        return self.company_name
+
 
 class Job(models.Model):
     company = models.ForeignKey(Company, on_delete=models.CASCADE)

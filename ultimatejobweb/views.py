@@ -4,6 +4,7 @@ from .forms import SignUpFroms
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from ultimatejobweb.models import Job
+from ultimatejobweb.filters import OrderJob
 
 
 def homepage(request):
@@ -37,7 +38,10 @@ def personal_area(request):
 
 @login_required(login_url="/sign_in")
 def available_jobs(request):
-    return render(request, r"available_jobs.html", {'job': Job.objects.all()})
+    jobs = Job.objects.all()
+    jobFilter = OrderJob(request.GET, queryset=jobs)
+    jobs = jobFilter.qs
+    return render(request, r"available_jobs.html", {'job': jobs, 'jobFilter': jobFilter})
 
 
 def logout_view(request):

@@ -12,15 +12,20 @@
            <!-- alert-->
            <div class="container">
             <div class="alert alert-primary">
-                <strong>Strep 3: choose your next job!</strong>
+                <strong>Step 3: choose your next job!</strong>
                 <p>Everything is ready now, all you have to do is go into the company's sites and apply for your job </p>
     
     
             </div>
         </div>
-
+			
    <!--tables-->
    <div class="container">
+	<form method="get">
+		{{jobFilter.form}}
+		<button type="submit">
+		Search</button>
+	</form>
     <table class="table table-hover table-stripped">
         <thead class="thead-dark">
             <tr>
