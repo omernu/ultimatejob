@@ -7,6 +7,7 @@ from ultimatejobweb.models import Job
 from ultimatejobweb.filters import OrderJob
 
 
+
 def homepage(request):
     return render(request, r"home_page.html")
 
