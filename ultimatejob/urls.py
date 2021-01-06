@@ -14,17 +14,18 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
 from ultimatejobweb import views
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.homepage, name='homepage'),
     path('signup/', views.sign_up, name="signup"),
     path('personal_area/', views.personal_area, name="personal_area"),
-    path('sign_in/', views.sign_in, name="sign_in"),
+    path('sign_in/', views.sign_in_view, name="sign_in"),
     path('available_jobs/', views.available_jobs, name="available_jobs"),
-    path('accounts/', include('django.contrib.auth.urls')),
-    path('signin/', views.signup_view, name="sign_in")
-
+    path('logout/', views.logout_view, name="logout")
 ]
+
+urlpatterns += staticfiles_urlpatterns()
